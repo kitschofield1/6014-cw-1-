@@ -13,7 +13,7 @@ void show_notes(unsigned int size) {
     char command[size];
 
     printf("Whose notes: ");
-    scanf("%s", person);
+    scanf("%11s", person);
 
     strcpy (command, "cat notes/");
     strcat (command, person);
