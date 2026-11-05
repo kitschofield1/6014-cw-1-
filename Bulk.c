@@ -7,6 +7,23 @@ char who[12];
 int size = MAX_SIZE;
 char password[12];
 
+int validfile(const char *person) {
+    for (int i = 0; person[i] != '\0'; i++) {
+      if (!((person[i] >= 'a' && person[i] <= 'z') ||
+        (person[i] >= 'A' && person[i] <= 'Z') ||
+        (person[i] >= '0' && person[i] <= '9') ||
+        (person[i] == '_') ||
+        (person[i] == '-') ||
+        (person[i] == '.'))) {
+
+          return 0;
+
+      }
+    }
+
+    return 1;
+}
+
 void show_notes(unsigned int size) {
 
     char person[12];
