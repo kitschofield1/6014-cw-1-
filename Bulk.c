@@ -30,7 +30,13 @@ void show_notes(unsigned int size) {
     char command[size];
 
     printf("Whose notes: ");
-    scanf("%11s", person);
+    if (scanf("%11s", person) != 1) {
+      return;
+    }
+
+    if (!validfile(person)) {
+      return;
+    }
 
     strcpy (command, "cat notes/");
     strcat (command, person);
