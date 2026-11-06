@@ -53,15 +53,15 @@ int main() {
     printf("Password: ");
     scanf("%s", password);
 
-    if ((strcmp(who, "ian") == 0) && (strcmp(password, "iscool") != 0))
-        exit(0);
+    if ((strcmp(who, "ian") == 0) && (strcmp(password, "iscool") == 0)) {
+      show_notes(size);
+    }
 
-    else {
-        if ((strcmp(who, "george") == 0) && (strcmp(password, "iscooler") ==0))
-            show_notes(size);
-        else 
+    else if ((strcmp(who, "george") == 0) && (strcmp(password, "iscooler") == 0)) {
             show_notes(size);
     }
-    
+    else {
+      exit(0);
+    }
     return 0;   
 } //first proper commit
